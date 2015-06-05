@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>Territory detail</h1>
+    <hr/>
+
+    <form novalidate="novalidate" class="form-horizontal col-sm-3">
+        <div class="control-group">
+            <label class="control-label" for="territoryName">Name:</label>
+
+            <div class="controls">
+                <input type="text" id="territoryName" class="input-sm form-control" ng-model="territory.name"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="territoryType">Type:</label>
+
+            <div class="controls">
+                <input type="text" id="territoryType" class="input-sm form-control" ng-model="territory.type" disabled/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="territoryZip">Zip:</label>
+
+            <div class="controls">
+                <input type="text" id="territoryZip" class="input-sm form-control" ng-model="territory.zip"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="territoryParent">Parent:</label>
+
+            <div class="controls">
+                <select id="territoryParent"
+                        ng-model="territory.parent"
+                        ng-options="parent as parent.name for (key , parent) in countries"
+                        class="input-sm form-control">
+                </select>
+            </div>
+        </div>
+        <br/>
+        <div class="control-group">
+            <div class="controls">
+                <a ng-click="cancel()" class="btn btn-small btn-primary">Cancel</a>
+                <a ng-click="updateTerritory()" class="btn btn-small btn-success">Update</a>
+            </div>
+        </div>
+    </form>
+</div>

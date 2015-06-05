@@ -1,0 +1,59 @@
+<h1>Contacts:</h1>
+<br/>
+<div class="control-group">
+
+    <div class="controls col-sm-2">
+        <label class="control-label" for="itemsByPage">Items by page:</label>
+        <input type="number" min="1" id="itemsByPage" class="input-sm form-control" ng-model="itemsByPage"/>
+    </div>
+</div>
+
+<table st-table="displayedContacts" st-safe-src="contacts" class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th st-sort="firstName">First name</th>
+        <th st-sort="lastName">Last name</th>
+        <th st-sort="phone">Phone</th>
+        <th st-sort="email">Email</th>
+        <th st-sort="city.name">City</th>
+        <th st-sort="city.parent.name">Country</th>
+    </tr>
+    <tr>
+        <th colspan="8">
+            <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+        </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr ng-repeat="contact in displayedContacts">
+        <td>{{contact.firstName}}</td>
+        <td>{{contact.lastName}}</td>
+        <td>{{contact.phone}}</td>
+        <td>{{contact.email}}</td>
+        <td><a href="#/territory-detail/{{contact.city.id}}">{{contact.city.name}}</a></td>
+        <td><a href="#/territory-detail/{{contact.city.parent.id}}">{{contact.city.parent.name}}</a></td>
+        <td class="col-md-1" >
+            <a ng-click="editContact(contact.id)" class="btn btn-small btn-primary">Edit</a>
+        </td>
+        <td class="col-md-1" >
+            <a ng-click="deleteContact(contact.id)" class="btn btn-small btn-danger">
+                <i class="glyphicon glyphicon-remove-circle"></i>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+
+    <tfoot>
+    <tr>
+        <td style="cursor:pointer" colspan="6" class="text-center">
+            <div st-pagination="/partials/pagination.html" st-items-by-page="itemsByPage" st-displayed-pages="5"></div>
+        </td>
+        <td colspan="2" class="text-center">
+            <a href="#/contact-creation" class="btn btn-small btn-success">Create new</a>
+        </td>
+    </tr>
+    </tfoot>
+
+</table>
+<br/><br/><br/>

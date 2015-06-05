@@ -1,0 +1,71 @@
+<div class="container">
+    <h1>Create a new contact:</h1>
+    <hr/>
+
+    <form novalidate="novalidate" class="form-horizontal  col-sm-3">
+        <div class="control-group">
+            <label class="control-label" for="inputFirstName">First name:</label>
+
+            <div class="controls">
+                <input type="text" id="inputFirstName" class="input-sm form-control" ng-model="contact.firstName" placeholder="first name"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputLastName">Last name:</label>
+
+            <div class="controls">
+                <input type="text" id="inputLastName" class="input-sm form-control" ng-model="contact.lastName" placeholder="last name"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputPhone">Phone:</label>
+
+            <div class="controls">
+                <input type="text" id="inputPhone" class="input-sm form-control" ng-model="contact.phone" placeholder="phone"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputEmail">Email:</label>
+
+            <div class="controls">
+                <input type="text" id="inputEmail" class="input-sm form-control" ng-model="contact.email" placeholder="email"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputCountry">Country:</label>
+
+            <div class="controls">
+                <select id="inputCountry"
+                        ng-model="country"
+                        ng-options="value.name for (key , value) in countries"
+                        ng-change="onCountrySelect()"
+                        class="input-sm form-control">
+                </select>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputCity">City:</label>
+
+            <div class="controls">
+                <select id="inputCity"
+                        ng-model="contact.city"
+                        ng-options="value as value.name for (key , value) in cities"
+                        class="input-sm form-control">
+                </select>
+            </div>
+        </div>
+        <br/>
+
+        <div class="control-group">
+            <div class="controls">
+                <a ng-click="cancel()" class="btn btn-small btn-primary">Cancel</a>
+                <a ng-click="createContact()" class="btn btn-small btn-success">Create</a>
+            </div>
+        </div>
+    </form>
+</div>

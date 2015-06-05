@@ -1,0 +1,48 @@
+<div class="container">
+    <h1>Donation detail</h1>
+    <hr/>
+
+    <form novalidate="novalidate" class="form-horizontal  col-sm-3">
+
+        <div class="control-group">
+            <label class="control-label" for="inputContact">Contact: {{donation.contact.firstName}} {{donation.contact.lastName}}</label>
+
+            <div class="controls">
+                <select id="inputContact"
+                        ng-model="donation.contact"
+                        ng-options="contact as contact.firstName + ' ' + contact.lastName  for (key , contact) in contacts"
+                        class="input-sm form-control">
+                </select>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputOperator">Operator: {{donation.operator.firstName}} {{donation.operator.lastName}}</label>
+
+            <div class="controls">
+                <select id="inputOperator"
+                        ng-model="donation.operator"
+                        ng-options="operator as operator.firstName + ' ' + operator.lastName  for (key , operator) in operators"
+                        class="input-sm form-control">
+                </select>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputAmount">Amount:</label>
+
+            <div class="controls">
+                <input type="number" id="inputAmount" ng-model="donation.amount" min="1" class="input-sm form-control" placeholder="how many?"/>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="control-group">
+            <div class="controls">
+                <a ng-click="cancel()" class="btn btn-small btn-primary">Cancel</a>
+                <a ng-click="updateDonation()" class="btn btn-small btn-success">Update</a>
+            </div>
+        </div>
+    </form>
+</div>

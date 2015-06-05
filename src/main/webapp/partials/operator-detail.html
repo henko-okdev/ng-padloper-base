@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>Operator detail</h1>
+    <hr/>
+
+    <form novalidate="novalidate" class="form-horizontal  col-sm-3">
+        <div class="control-group">
+            <label class="control-label" for="inputFirstName">First name:</label>
+
+            <div class="controls">
+                <input type="text" id="inputFirstName" class="input-sm form-control" ng-model="operator.firstName" placeholder="first name"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputLastName">Last name:</label>
+
+            <div class="controls">
+                <input type="text" id="inputLastName" class="input-sm form-control" ng-model="operator.lastName" placeholder="last name"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputPhone">Phone:</label>
+
+            <div class="controls">
+                <input type="text" id="inputPhone" class="input-sm form-control" ng-model="operator.phone" placeholder="phone"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputEmail">Email:</label>
+
+            <div class="controls">
+                <input type="text" id="inputEmail" class="input-sm form-control" ng-model="operator.email" placeholder="email"/>
+            </div>
+        </div>
+        <br/>
+
+        <div class="control-group">
+            <div class="controls">
+                <a ng-click="cancel()" class="btn btn-small btn-primary">Cancel</a>
+                <a ng-click="updateOperator()" class="btn btn-small btn-success">Update</a>
+            </div>
+        </div>
+    </form>
+</div>

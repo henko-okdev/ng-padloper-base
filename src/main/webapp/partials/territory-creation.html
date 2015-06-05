@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>Create a new city</h1>
+    <hr/>
+
+    <form novalidate="novalidate" class="form-horizontal  col-sm-3">
+        <div class="control-group">
+            <label class="control-label" for="inputName">Name:</label>
+
+            <div class="controls">
+                <input type="text" id="inputName" class="input-sm form-control" ng-model="territory.name" placeholder="name"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputZip">Zip:</label>
+
+            <div class="controls">
+                <input type="text" id="inputZip" class="input-sm form-control" ng-model="territory.zip" placeholder="zip"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputType">Type:</label>
+
+            <div class="controls">
+                <select id="inputType"
+                        ng-model="territory.type"
+                        ng-options="type for type in types"
+                        ng-change="onTypeSelect()"
+                        class="input-sm form-control">
+                </select>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="inputParent">Parent city:</label>
+
+            <div class="controls">
+                <select id="inputParent"
+                        ng-model="territory.parent"
+                        ng-options="parent as parent.name for (key , parent) in countries"
+                        class="input-sm form-control"
+                        placeholder = "select country">
+                </select>
+            </div>
+        </div>
+        <br/>
+
+        <div class="control-group">
+            <div class="controls">
+                <a ng-click="cancel()" class="btn btn-small btn-primary">Cancel</a>
+                <a ng-click="createTerritory()" class="btn btn-small btn-success">Create</a>
+            </div>
+        </div>
+    </form>
+</div>

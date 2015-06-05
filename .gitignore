@@ -1,0 +1,12 @@
+# IntelliJ
+.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+*.isw
+ng-call-center.iml
+
+# Maven
+target/**
+log/**
+
+.*~
